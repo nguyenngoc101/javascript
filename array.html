@@ -1,19 +1,13 @@
 <html>
   <head>
-    <title>learing javascript</title>
+    <title>learning javascript</title>
   </head>
   <body>
     <script type="text/javascript">
-      function outer() {
-        var a = 1;
-        function inner() { };
-        var b = 2;
-        if (a == 1) {
-          var c = 3;
-        }
-        document.write(c);
-      }
-      outer();
+      function ninja(){ document.write(this)};
+      ninja();
+      var samurai = function(){document.write(this)};
+      samurai();
     </script>
   </body>
 </html>
