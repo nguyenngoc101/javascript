@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML>
+  <HEAD>
+    <TITLE>Float example</TITLE>
+    <STYLE type="text/css">
+      IMG { float: left }
+      BODY, P, IMG { margin: 2em }
+    </STYLE>
+  </HEAD>
+  <BODY>
+    <P><IMG src=hagiang.jpg alt="This image will illustrate floats">
+<p>
+       Some sample text that has no other...
+aaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaFormatting would have been exactly the same if the document had been:
+
+
+
+because the content to the left of the float is displaced by the float and reflowed down its right side.
+
+As stated in section 8.3.1, the margins of floating boxes never collapse with margins of adjacent boxes. Thus, in the previous example, vertical margins do not collapse between the P box and the floated IMG box.
+
+The contents of floats are stacked as if floats generated new stacking contexts, except that any positioned elements and elements that actually create new stacking contexts take part in the float's parent stacking context. A float can overlap other boxes in the normal flow (e.g., when a normal flow box next to a float has negative margins). When this happens, floats are rendered in front of non-positioned in-flow blocks, but behind in-flow inlines.
+
+Here is another illustration, showing what happens when a float overlaps borders of elements in the normal flow.</p>
+  </BODY>
+</HTML>
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#div1 {
+  float: left;
+  width: 200px;
+  height: 100px;
+  background-color: blue;
+}
+#div2 {
+  float: right;
+  width: 300px;
+  height: 100px;
+  background-color: green;
+}
+#container {
+  
+}
+</style>
+</head>
+<body>
+<div id="container">
+ <div id="div1"></div>
+ <div id="div2"></div>
+</div>
+</body>
+</html>
+-->
