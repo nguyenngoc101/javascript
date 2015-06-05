@@ -118,15 +118,17 @@ function assign(name) {
   }
 }
 
+// Closure pitfalls: la loi thuong gap khi dung closure
 for(var i = 0; i < methods.length; i++) {
     var my_name = methods[i];
     MyArray.prototype[my_name] = function() {
-    return Array.prototype[my_name].apply(this, arguments);
+      console.log("aaaaaaaaaaaaaaaa");
+      return Array.prototype[my_name].apply(this, arguments);
   }
-
 }
 
 var mine = new MyArray();
+mine.join(1,2,3);
 console.log("mine.length: "+mine.length);
 console.log("/*==========================*/");
 /*========================================================*/
