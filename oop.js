@@ -111,24 +111,36 @@ MyArray.prototype.length = 0;
 
 var methods = ['push', 'pop', 'shift', 'unshift', 'slice', 'splice', 'join'];
 
-function assign(name) {
-  console.log("name: "+name);
+/* ===khai bao tuong minh closure va emidiate function===*/
+//function assign(name) {
+//  MyArray.prototype[name] = function() {
+//    return Array.prototype[name].apply(this, arguments);
+//  }
+//}
+
+// Closure pitfalls: la loi thuong gap khi dung closure
+//for(var i = 0; i < methods.length; i++) {
+//    assign(methods[i]);
+//}
+
+
+/* ===khai bao ngan gon closure va imediate function===*/
+for (var i=0; i < methods.length; i++) (function(name){
   MyArray.prototype[name] = function() {
     return Array.prototype[name].apply(this, arguments);
   }
-}
-
-// Closure pitfalls: la loi thuong gap khi dung closure
-for(var i = 0; i < methods.length; i++) {
-    var my_name = methods[i];
-    MyArray.prototype[my_name] = function() {
-      console.log("aaaaaaaaaaaaaaaa");
-      return Array.prototype[my_name].apply(this, arguments);
-  }
-}
-
+})(methods[i]);
 var mine = new MyArray();
-mine.join(1,2,3);
+mine.push(1,2,3);
 console.log("mine.length: "+mine.length);
 console.log("/*==========================*/");
+// instantiation issues
+function Test() {
+  this.myFunction = function(){};
+};
+function check(){};
+var test = new Test();
+console.log(Object.getOwnPropertyNames(Function));
+console.log(Object.getOwnPropertyNames(Function.prototype));
+console.log(Object.getOwnPropertyNames(Test.prototype));
 /*========================================================*/
